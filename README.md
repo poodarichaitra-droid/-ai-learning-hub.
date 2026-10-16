@@ -1,2 +1,2 @@
-# -ai-learning-hub.
+# ai-learning-hub.
 My interactive AI learning website.
