@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Learning Hub</title>
+    
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Load Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* Slate 900 */
+            color: #f8fafc;
+            background-image: radial-gradient(circle at top right, #1e293b, transparent 40%), radial-gradient(circle at bottom left, #1e293b, transparent 40%);
+            background-attachment: fixed;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--hover-color);
+        }
+
+        /* Custom Radio Button Styles */
+        .radio-custom:checked + label {
+            background-color: rgba(59, 130, 246, 0.15);
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+        }
+        
+        .radio-custom:checked + label .option-letter {
+            background-color: #3b82f6;
+            color: white;
+            border-color: #3b82f6;
+        }
+
+        /* Prevent unstyled content flash */
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col font-sans selection:bg-blue-500/30">
+
+    <header class="pt-20 pb-16 px-6 text-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+CjxjaXJjbGUgY3g9IjIiIGN5PSIyIiByPSIyIiBmaWxsPSJyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMDUwKSIvPgo8L3N2Zz4=')] opacity-50 pointer-events-none"></div>
+        <div class="max-w-4xl mx-auto relative z-10">
+            <div class="inline-flex items-center justify-center p-3 bg-blue-500/10 rounded-full mb-6 border border-blue-500/20 backdrop-blur-sm text-blue-400">
+                <i class="ph-fill ph-robot text-2xl mr-2"></i>
+                <span class="font-semibold tracking-wide uppercase text-sm">Interactive Guide</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 drop-shadow-sm">
+                AI Learning Hub
+            </h1>
+            <p class="text-xl md:text-2xl text-slate-300 max-w-2xl mx-auto leading-relaxed font-light">
+                Welcome to AI Learning Hub! Explore Artificial Intelligence, understand Machine Learning, and test your knowledge.
+            </p>
+        </div>
+    </header>
+
+    <main class="flex-grow px-6 pb-20 w-full max-w-7xl mx-auto z-10">
+        
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24" aria-label="Educational Information Cards">
+            
+            <!-- Card 1: What is AI? -->
+            <div class="bg-slate-800/80 backdrop-blur-sm rounded-3xl p-8 border border-slate-700/50 card-hover flex flex-col h-full relative overflow-hidden group" style="--hover-color: rgba(59, 130, 246, 0.3)">
+                <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-blue-600"></div>
+                <div class="bg-gradient-to-br from-blue-500/20 to-blue-600/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-8 text-blue-400 border border-blue-500/20 shadow-[0_0_15px_rgba(59,130,246,0.15)] relative z-10">
+                    <i class="ph ph-brain text-3xl"></i>
+                </div>
+                <h2 class="text-3xl font-bold mb-4 text-white tracking-tight relative z-10">What is AI?</h2>
+                <p class="text-slate-300 leading-relaxed mb-8 flex-grow text-lg font-light relative z-10">
+                    Artificial Intelligence (AI) is when we teach computers to think, solve problems, or make decisions similar to how humans do. It allows machines to perform tasks that normally require human intelligence.
+                </p>
+                <div class="bg-slate-900/60 p-5 rounded-2xl border border-slate-700/50 mt-auto relative z-10 group-hover:border-blue-500/30 transition-colors duration-300">
+                    <div class="flex items-center gap-2 mb-2">
+                        <i class="ph-fill ph-lightbulb text-blue-400"></i>
+                        <strong class="text-blue-400 text-sm uppercase tracking-wider font-semibold">Everyday Example</strong>
+                    </div>
+                    <span class="text-slate-300 text-sm leading-relaxed block">Smart speakers like Alexa or Siri understanding your voice commands to play music or set alarms.</span>
+                </div>
+            </div>
+
+            <!-- Card 2: What is Machine Learning? -->
+            <div class="bg-slate-800/80 backdrop-blur-sm rounded-3xl p-8 border border-slate-700/50 card-hover flex flex-col h-full relative overflow-hidden group" style="--hover-color: rgba(168, 85, 247, 0.3)">
+                <div class="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-400 to-purple-600"></div>
+                <div class="bg-gradient-to-br from-purple-500/20 to-purple-600/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-8 text-purple-400 border border-purple-500/20 shadow-[0_0_15px_rgba(168,85,247,0.15)] relative z-10">
+                    <i class="ph ph-chart-scatter text-3xl"></i>
+                </div>
+                <h2 class="text-3xl font-bold mb-4 text-white tracking-tight relative z-10">What is ML?</h2>
+                <p class="text-slate-300 leading-relaxed mb-8 flex-grow text-lg font-light relative z-10">
+                    Machine Learning (ML) is a specific type of AI. Instead of giving a computer exact, step-by-step instructions, we give it lots of data. The computer uses this data to find patterns and learn how to do a task on its own.
+                </p>
+                <div class="bg-slate-900/60 p-5 rounded-2xl border border-slate-700/50 mt-auto relative z-10 group-hover:border-purple-500/30 transition-colors duration-300">
+                    <div class="flex items-center gap-2 mb-2">
+                        <i class="ph-fill ph-lightbulb text-purple-400"></i>
+                        <strong class="text-purple-400 text-sm uppercase tracking-wider font-semibold">Everyday Example</strong>
+                    </div>
+                    <span class="text-slate-300 text-sm leading-relaxed block">Streaming services analyzing the shows you watch to recommend new movies you might like.</span>
+                </div>
+            </div>
+
+            <!-- Card 3: Where is AI used? -->
+            <div class="bg-slate-800/80 backdrop-blur-sm rounded-3xl p-8 border border-slate-700/50 card-hover flex flex-col h-full relative overflow-hidden group" style="--hover-color: rgba(99, 102, 241, 0.3)">
+                <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-400 to-indigo-600"></div>
+                <div class="bg-gradient-to-br from-indigo-500/20 to-indigo-600/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-8 text-indigo-400 border border-indigo-500/20 shadow-[0_0_15px_rgba(99,102,241,0.15)] relative z-10">
+                    <i class="ph ph-globe-hemisphere-west text-3xl"></i>
+                </div>
+                <h2 class="text-3xl font-bold mb-4 text-white tracking-tight relative z-10">Where is AI used?</h2>
+                <p class="text-slate-300 leading-relaxed mb-8 flex-grow text-lg font-light relative z-10">
+                    AI is everywhere in our modern world, helping to make systems faster, smarter, and more efficient across various industries.
+                </p>
+                <div class="bg-slate-900/60 p-5 rounded-2xl border border-slate-700/50 mt-auto relative z-10 group-hover:border-indigo-500/30 transition-colors duration-300">
+                    <ul class="text-slate-300 text-sm space-y-3">
+                        <li class="flex items-start gap-3"><i class="ph-fill ph-heartbeat text-indigo-400 mt-0.5 text-lg"></i> <span><strong class="text-white font-medium">Healthcare:</strong> Assisting doctors in diagnosing diseases.</span></li>
+                        <li class="flex items-start gap-3"><i class="ph-fill ph-graduation-cap text-indigo-400 mt-0.5 text-lg"></i> <span><strong class="text-white font-medium">Education:</strong> Providing personalized tutoring apps.</span></li>
+                        <li class="flex items-start gap-3"><i class="ph-fill ph-car-profile text-indigo-400 mt-0.5 text-lg"></i> <span><strong class="text-white font-medium">Transport:</strong> Powering self-driving car navigation.</span></li>
+                        <li class="flex items-start gap-3"><i class="ph-fill ph-game-controller text-indigo-400 mt-0.5 text-lg"></i> <span><strong class="text-white font-medium">Gaming:</strong> Creating realistic video game opponents.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto bg-slate-800/90 backdrop-blur-md rounded-[2.5rem] p-8 md:p-14 shadow-2xl relative overflow-hidden border border-slate-700/50" id="quiz-section">
+            <!-- Decorative background blobs -->
+            <div class="absolute top-0 right-0 -mt-32 -mr-32 w-96 h-96 bg-purple-600 rounded-full mix-blend-multiply filter blur-[80px] opacity-20 pointer-events-none"></div>
+            <div class="absolute bottom-0 left-0 -mb-32 -ml-32 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-[80px] opacity-20 pointer-events-none"></div>
+
+            <div class="relative z-10">
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center justify-center p-4 bg-slate-900/50 rounded-full mb-6 border border-slate-700 shadow-inner">
+                        <i class="ph-fill ph-exam text-4xl text-transparent bg-clip-text bg-gradient-to-br from-blue-400 to-purple-400" style="-webkit-background-clip: text; color: #a78bfa;"></i>
+                    </div>
+                    <h2 class="text-4xl font-extrabold mb-4 text-white tracking-tight">Test Your Knowledge</h2>
+                    <p class="text-slate-400 text-lg">Take this quick quiz to see what you've learned about AI!</p>
+                </div>
+
+                <form id="quiz-form" class="space-y-10">
+                    
+                    <!-- Question 1 -->
+                    <div class="bg-slate-900/80 p-8 rounded-3xl border border-slate-700/80 shadow-lg">
+                        <h3 class="text-2xl font-bold mb-6 text-white flex items-start">
+                            <span class="bg-gradient-to-br from-blue-500 to-blue-600 text-white text-base rounded-xl w-9 h-9 flex items-center justify-center mr-4 flex-shrink-0 mt-0.5 shadow-md">1</span>
+                            What does AI stand for?
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="relative">
+                                <input type="radio" name="q1" value="A" id="q1a" class="peer sr-only radio-custom" required>
+                                <label for="q1a" class="flex items-center p-4 rounded-2xl border-2 border-slate-700/50 cursor-pointer hover:bg-slate-800 transition-all peer-checked:bg-blue-900/20 peer-checked:border-blue-500 peer-checked:shadow-[0_0_15px_rgba(59,130,246,0.15)] group">
+                                    <span class="option-letter w-8 h-8 rounded-lg bg-slate-800 border border-slate-600 flex items-center justify-center mr-4 font-bold text-slate-400 transition-colors">A</span>
+                                    <span class="font-medium text-slate-300 group-hover:text-white transition-colors text-lg">Automatic Integration</span>
+                                </label>
+                            </div>
+                            <div class="relative">
+                                <input type="radio" name="q1" value="B" id="q1b" class="peer sr-only radio-custom">
+                                <label for="q1b" class="flex items-center p-4 rounded-2xl border-2 border-slate-700/50 cursor-pointer hover:bg-slate-800 transition-all peer-checked:bg-blue-900/20 peer-checked:border-blue-500 peer-checked:shadow-[0_0_15px_rgba(59,130,246,0.15)] group">
+                                    <span class="option-letter w-8 h-8 rounded-lg bg-slate-800 border border-slate-600 flex items-center justify-center mr-4 font-bold text-slate-400 transition-colors">B</span>
+                                    <span class="font-medium text-slate-300 group-hover:text-white transition-colors text-lg">Artificial Intelligence</span>
+                                </label>
+                            </div>
+                            <div class="relative">
+                                <input type="radio" name="q1" value="C" id="q1c" class="peer sr-only radio-custom">
+                                <label for="q1c" class="flex items-center p-4 rounded-2xl border-2 border-slate-700/50 cursor-pointer hover:bg-slate-800 transition-all peer-checked:bg-blue-900/20 peer-checked:border-blue-500 peer-checked:shadow-[0_0_15px_rgba(59,130,246,0.15)] group">
+                                    <span class="option-letter w-8 h-8 rounded-lg bg-slate-800 border border-slate-600 flex items-center justify-center mr-4 font-bold text-slate-400 transition-colors">C</span>
+                                    <span class="font-medium text-slate-300 group-hover:text-white transition-colors text-lg">Applied Information</span>
+                                </label>
+                            </div>
+                            <div class="relative">
+                                <input type="radio" name="q1" value="D" id="q1d" class="peer sr-only radio-custom">
+                                <label for="q1d" class="flex items-center p-4 rounded-2xl border-2 border-slate-700/50 cursor-pointer hover:bg-slate-800 transition-all peer-checked:bg-blue-900/20 peer-checked:border-blue-500 peer-checked:shadow-[0_0_15px_rgba(59,130,246,0.15)] group">
+                                    <span class="option-letter w-8 h-8 rounded-lg bg-slate-800 border border-slate-600 flex items-center justify-center mr-4 font-bold text-slate-400 transition-colors">D</span>
+                                    <span class="font-medium text-slate-300 group-hover:text-white transition-colors text-lg">Advanced Innovation</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="bg-slate-900/80 p-8 rounded-3xl border border-slate-700/80 shadow-lg">
+                        <h3 class="text-2xl font-bold mb-6 text-white flex items-start">
+                            <span class="bg-gradient-to-br from-purple-500 to-purple-600 text-white text-base rounded-xl w-9 h-9 flex items-center justify-center mr-4 flex-shrink-0 mt-0.5 shadow-md">2</span>
+                            Which of these is an example of Machine Learning?
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="relative">
+                                <input type="radio" name="q2" value="A" id="q2a" class="peer sr-only radio-custom" required>
+                                <label for="q2a" class="flex items-center p-4 rounded-2xl border-2 border-slate-700/50 cursor-pointer hover:bg-slate-800 transition-all peer-checked:bg-purple-900/20 peer-checked:border-purple-500 peer-checked:shadow-[0_0_15px_rgba(168,85,247,0.15)] group">
+                                    <span class="option-letter w-8 h-8 rounded-lg bg-slate-800 border border-slate-600 flex items-center justify-center mr-4 font-bold text-slate-400 transition-colors">A</span>
+                                    <span class="font-medium text-slate-300 group-hover:text-white transition-colors text-lg">A calculator adding numbers</span>
+                                </label>
+                            </div>
+                            <div class="relative">
+                                <input type="radio" name="q2" value="B" id="q2b" class="peer sr-only radio-custom">
+                                <label for="q2b" class="flex items-center p-4 rounded-2xl border-2 border-slate-700/50 cursor-pointer hover:bg-slate-800 transition-all peer-checked:bg-purple-900/20 peer-checked:border-purple-500 peer-checked:shadow-[0_0_15px_rgba(168,85,247,0.15)] group">
+                                    <span class="option-letter w-8 h-8 rounded-lg bg-slate-800 border border-slate-600 flex items-center justify-center mr-4 font-bold text-slate-400 transition-colors">B</span>
+                                    <span class="font-medium text-slate-300 group-hover:text-white transition-colors text-lg">A movie recommendation system</span>
+                                </label>
+                            </div>
+                            <div class="relative">
+                                <input type="radio" name="q2" value="C" id="q2c" class="peer sr-only radio-custom">
+                                <label for="q2c" class="flex items-center p-4 rounded-2xl border-2 border-slate-700/50 cursor-pointer hover:bg-slate-800 transition-all peer-checked:bg-purple-900/20 peer-checked:border-purple-500 peer-checked:shadow-[0_0_15px_rgba(168,85,247,0.15)] group">
+                                    <span class="option-letter w-8 h-8 rounded-lg bg-slate-800 border border-slate-600 flex items-center justify-center mr-4 font-bold text-slate-400 transition-colors">C</span>
+                                    <span class="font-medium text-slate-300 group-hover:text-white transition-colors text-lg">A digital clock</span>
+                                </label>
+                            </div>
+                            <div class="relative">
+                                <input type="radio" name="q2" value="D" id="q2d" class="peer sr-only radio-custom">
+                                <label for="q2d" class="flex items-center p-4 rounded-2xl border-2 border-slate-700/50 cursor-pointer hover:bg-slate-800 transition-all peer-checked:bg-purple-900/20 peer-checked:border-purple-500 peer-checked:shadow-[0_0_15px_rgba(168,85,247,0.15)] group">
+                                    <span class="option-letter w-8 h-8 rounded-lg bg-slate-800 border border-slate-600 flex items-center justify-center mr-4 font-bold text-slate-400 transition-colors">D</span>
+                                    <span class="font-medium text-slate-300 group-hover:text-white transition-colors text-lg">A traditional light switch</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="bg-slate-900/80 p-8 rounded-3xl border border-slate-700/80 shadow-lg">
+                        <h3 class="text-2xl font-bold mb-6 text-whit
